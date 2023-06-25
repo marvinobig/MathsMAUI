@@ -4,14 +4,45 @@
              x:Class="MathsMAUI.GamePage"
              Padding="20"
              BackgroundColor="#272727">
-    <VerticalStackLayout>
+
+    <VerticalStackLayout HorizontalOptions="Center"
+                         Spacing="40">
         <Label 
-            Text="{Binding GameName}"
-            FontSize="60" 
-            TextColor="#29f3c3"
-            FontAttributes="Bold"
-            Margin="10,10,10,20"
-            HorizontalOptions="Center"
-            HorizontalTextAlignment="Center" />
+                Text="{Binding GameName}"
+                FontSize="60" 
+                TextColor="#29f3c3"
+                FontAttributes="Bold"
+                Margin="10,10,10,20"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center" />
+
+        <Label x:Name="Question"
+               Text="Question"
+               FontSize="40" 
+               TextColor="#fcfcfc"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center" />
+
+        <Entry x:Name="AnswerInput"
+               Placeholder="Enter your answer"
+               >
+        </Entry>
+
+        <Button Text="Submit"
+                TextColor="#272727"
+                BackgroundColor="#29f3c3"
+                FontSize="18"
+                Clicked="HandleAnswer"
+                Padding="20"/>
+
+        <Label x:Name="SolutionDisplay"
+               Text=""
+               FontSize="30" 
+               TextColor="#fcfcfc"
+               FontAttributes="Bold"
+               Margin="10,10,10,20"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center" />
     </VerticalStackLayout>
 </ContentPage>
