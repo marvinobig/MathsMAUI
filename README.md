@@ -15,3 +15,7 @@ Learn basic maths with this windows and android app.
 - XAML event attributes
 - XAML layouts (grid, flexbox)
 - Type casting
+- XAML entry tag
+- Creating Pages
+- Async...await
+- Basic navigation with `Navigation.PushAsync()`
