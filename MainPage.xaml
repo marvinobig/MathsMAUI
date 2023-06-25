@@ -6,10 +6,8 @@
              BackgroundColor="#272727">
 
     <ContentView>
-
         <VerticalStackLayout HorizontalOptions="CenterAndExpand"
                              Spacing="20">
-
             <Label Text="Welcome to Maths: Basic Arithmetic" 
                    FontSize="60" 
                    TextColor="#29f3c3"
@@ -17,7 +15,7 @@
                    Margin="10,10,10,20"
                    HorizontalOptions="Center"
                    HorizontalTextAlignment="Center"/>
-            
+
             <Label Text="Available Maths Games" 
                    FontSize="40" 
                    TextColor="#fcfcfc"
@@ -81,9 +79,6 @@
                         Clicked="Navigate"
                         Padding="20"/>
             </Grid>
-            
         </VerticalStackLayout>
-        
     </ContentView>
-
 </ContentPage>
