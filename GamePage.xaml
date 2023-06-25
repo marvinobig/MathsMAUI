@@ -35,14 +35,5 @@
                 FontSize="18"
                 Clicked="HandleAnswer"
                 Padding="20"/>
-
-        <Label x:Name="SolutionDisplay"
-               Text=""
-               FontSize="30" 
-               TextColor="#fcfcfc"
-               FontAttributes="Bold"
-               Margin="10,10,10,20"
-               HorizontalOptions="Center"
-               HorizontalTextAlignment="Center" />
     </VerticalStackLayout>
 </ContentPage>
