@@ -19,3 +19,4 @@ Learn basic maths with this windows and android app.
 - Creating Pages
 - Async...await
 - Basic navigation with `Navigation.PushAsync()`
+- Switch expressions
