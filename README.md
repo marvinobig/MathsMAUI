@@ -6,4 +6,12 @@ Learn basic maths with this windows and android app.
 
 - Creating a MAUI project 
 - Directory structure of a MAUI project
-- XAML
+- XAML namespaces
+- XAML tags
+- XAML attributes
+- XAML resources
+- XAML styling
+- Code behind pattern
+- XAML event attributes
+- XAML layouts (grid, flexbox)
+- Type casting
