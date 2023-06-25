@@ -47,7 +47,7 @@ public partial class GamePage : ContentPage
 		Question.Text = $"{_firstNum} {mathOperand} {_secondNum}";
     }
 
-	private void HandleAnswer(object sender, EventArgs e)
+	private async void HandleAnswer(object sender, EventArgs e)
 	{
 		int solution;
 		bool isUserAnswerNum = int.TryParse(AnswerInput.Text, out int intAnswer);
@@ -84,21 +84,23 @@ public partial class GamePage : ContentPage
         }
 		else
 		{
-            SolutionDisplay.Text = "Your answer is not a Number";
-		}
+            await DisplayAlert("Math: Basic Arithmetic", "Your answer is not a number", "Okay");
+        }
 	}
 
-    private void GameResponse(int solution, int intAnswer)
+    private async void GameResponse(int solution, int intAnswer)
     {
         if (intAnswer == solution)
         {
-            SolutionDisplay.Text = "You got it right";
+            await DisplayAlert("Math: Basic Arithmetic", "Result: You got that question right", "Next");          
             AnswerInput.Text = "";
             GenerateQuestion();
         }
         else
         {
-            SolutionDisplay.Text = "That's wrong. Try again";
+            await DisplayAlert("Math: Basic Arithmetic", "Result: You got that question wrong", "Next");
+            AnswerInput.Text = "";
+            GenerateQuestion();
         }
     }
 }
