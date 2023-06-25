@@ -10,7 +10,7 @@
         <VerticalStackLayout HorizontalOptions="CenterAndExpand"
                              Spacing="20">
 
-            <Label Text="Welcome to Maths: Basic Arithmatic" 
+            <Label Text="Welcome to Maths: Basic Arithmetic" 
                    FontSize="60" 
                    TextColor="#29f3c3"
                    FontAttributes="Bold"
