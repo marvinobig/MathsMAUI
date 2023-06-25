@@ -6,23 +6,20 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 	}
 
-	private async void ButtonAlert(object sender, EventArgs e)
+	private async void Navigate(object sender, EventArgs e)
 	{
-		Button btn = (Button)sender;
+		Button gameBtn = (Button)sender;
 
-		switch (btn.Text)
+		switch (gameBtn.Text)
 		{
 			case "Addition":
-				await DisplayAlert("Game Chosen", "Addition", "Play");
-				break;
 			case "Subtraction":
-                await DisplayAlert("Game Chosen", "Subtraction", "Play");
-                break;
             case "Multiplication":
-                await DisplayAlert("Game Chosen", "Multiplication", "Play");
-                break;
             case "Division":
-                await DisplayAlert("Game Chosen", "Division", "Play");
+                await Navigation.PushAsync(new GamePage(gameBtn.Text));
+                break;
+			case "Game History":
+                await Navigation.PushAsync(new GameHistory(gameBtn.Text));
                 break;
         }
 	}
