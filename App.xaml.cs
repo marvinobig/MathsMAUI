@@ -4,13 +4,13 @@ namespace MathsMAUI;
 
 public partial class App : Application
 {
-	public static GameRepository GameRepository { get; private set; }
-	public App(GameRepository gameRepository)
-	{
-		InitializeComponent();
+    public static GameRepository GameRepository { get; private set; }
+    public App(GameRepository gameRepository)
+    {
+        InitializeComponent();
 
-		MainPage = new AppShell();
+        MainPage = new AppShell();
 
-		GameRepository = gameRepository;
-	}
+        GameRepository = gameRepository;
+    }
 }
