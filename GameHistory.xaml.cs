@@ -5,7 +5,7 @@ public partial class GameHistory : ContentPage
     private string _page { get; set; }
     public string PageName
     {
-        get { return $"{_page} Page"; }
+        get { return $"{_page} Screen"; }
     }
     public GameHistory(string page)
     {
