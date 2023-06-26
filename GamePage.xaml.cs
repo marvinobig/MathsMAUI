@@ -1,3 +1,5 @@
+using MathsMAUI.Models;
+
 namespace MathsMAUI;
 
 public partial class GamePage : ContentPage
@@ -9,6 +11,12 @@ public partial class GamePage : ContentPage
 	}
     private int _firstNum { get; set; }
     private int _secondNum { get; set; }
+    private string _gameQuestion { get; set; }
+    public string GameQuestion
+    {
+        get { return _gameQuestion; }
+        set { _gameQuestion = value; }
+    }
 
 	public GamePage(string game)
 	{
@@ -44,7 +52,8 @@ public partial class GamePage : ContentPage
 			}
 		}
 
-		Question.Text = $"{_firstNum} {mathOperand} {_secondNum}";
+        GameQuestion = $"{_firstNum} {mathOperand} {_secondNum}";
+        Question.Text = GameQuestion;
     }
 
 	private async void HandleAnswer(object sender, EventArgs e)
@@ -90,11 +99,30 @@ public partial class GamePage : ContentPage
 
     private async void GameResponse(int solution, int intAnswer)
     {
+        MathOperation mathOperation = _game switch
+        {
+            "Addition" => MathOperation.Addition,
+            "Subtraction" => MathOperation.Subtraction,
+            "Multiplication" => MathOperation.Multiplication,
+            "Division" => MathOperation.Division,
+            _ => throw new NotImplementedException()
+        };
+
         if (intAnswer == solution)
         {
             await DisplayAlert("Math: Basic Arithmetic", "Result: You got that question right", "Next");          
             AnswerInput.Text = "";
+
             GenerateQuestion();
+
+            App.GameRepository.AddHistory(new History
+            {
+                gameChoice = mathOperation,
+                question = GameQuestion,
+                playedAt = DateTime.Now,
+                answer = solution,
+                userAnswer = intAnswer
+            });
         }
         else
         {
