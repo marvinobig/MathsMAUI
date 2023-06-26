@@ -113,7 +113,22 @@ public partial class GamePage : ContentPage
             await DisplayAlert("Math: Basic Arithmetic", "Result: You got that question right", "Next");          
             AnswerInput.Text = "";
 
+            App.GameRepository.AddHistory(new History
+            {
+                gameChoice = mathOperation,
+                question = GameQuestion,
+                playedAt = DateTime.Now,
+                answer = solution,
+                wasAnswerRight = "Correct",
+                userAnswer = intAnswer
+            });
+
             GenerateQuestion();
+        }
+        else
+        {
+            await DisplayAlert("Math: Basic Arithmetic", "Result: You got that question wrong", "Next");
+            AnswerInput.Text = "";
 
             App.GameRepository.AddHistory(new History
             {
@@ -121,13 +136,10 @@ public partial class GamePage : ContentPage
                 question = GameQuestion,
                 playedAt = DateTime.Now,
                 answer = solution,
+                wasAnswerRight = "Incorrect",
                 userAnswer = intAnswer
             });
-        }
-        else
-        {
-            await DisplayAlert("Math: Basic Arithmetic", "Result: You got that question wrong", "Next");
-            AnswerInput.Text = "";
+
             GenerateQuestion();
         }
     }
