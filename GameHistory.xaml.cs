@@ -12,5 +12,16 @@ public partial class GameHistory : ContentPage
         InitializeComponent();
         _page = page;
         BindingContext = this;
+        history.ItemsSource = App.GameRepository.GetAllHistory();
+    }
+
+    private void DeleteGameHistory(object sender, EventArgs e)
+    {
+        Button btn = (Button)sender;
+        int historyId = (int)btn.BindingContext;
+
+        App.GameRepository.DeleteHistory(historyId);
+
+        history.ItemsSource = App.GameRepository.GetAllHistory();
     }
 }
