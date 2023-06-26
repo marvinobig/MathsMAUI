@@ -6,28 +6,40 @@ namespace MathsMAUI.Data
     public class GameRepository
     {
         private readonly string _dbPath;
-        private readonly SQLiteConnection _dbConn;
+        private SQLiteConnection _dbConn;
 
         public GameRepository(string dbPath)
         {
             _dbPath = dbPath;
-            _dbConn = new SQLiteConnection(_dbPath);
+            Init(_dbPath);
+        }
+
+        private void Init(string dbPath)
+        {
+            if (_dbConn != null)
+                return;
+
+            _dbConn = new SQLiteConnection(dbPath);
             _dbConn.CreateTable<History>();
         }
 
         public List<History> GetAllHistory()
         {
-            return _dbConn.Table<History>().ToList();
+            _dbConn = new SQLiteConnection(_dbPath);
+            List<History> AllHistory = _dbConn.Table<History>().ToList();
+            return AllHistory;
         }
         
         public void AddHistory(History history)
         {
+            _dbConn = new SQLiteConnection(_dbPath);
             _dbConn.Insert(history);
         }
 
         public void DeleteHistory(int id) 
-        { 
-            _dbConn.Delete(id);
+        {
+            _dbConn = new SQLiteConnection(_dbPath);
+            _dbConn.Delete(new History { id = id });
         }
     }
 }
