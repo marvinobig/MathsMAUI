@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using SQLite;
+﻿using SQLite;
 
 namespace MathsMAUI.Models
 {
@@ -17,6 +11,7 @@ namespace MathsMAUI.Models
         public string question { get; set; }
         public int answer { get; set; }
         public int userAnswer { get; set; }
+        public string wasAnswerRight { get; set; }
         public DateTime playedAt { get; set; }
     }
 
