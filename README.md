@@ -20,3 +20,6 @@ Learn basic maths with this windows and android app.
 - Async...await
 - Basic navigation with `Navigation.PushAsync()`
 - Switch expressions
+- Dependency injection in MAUI
+- Using SQLite in a .NET/MAUI app
+- Repository Pattern 
