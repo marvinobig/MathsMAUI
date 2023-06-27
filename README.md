@@ -1,6 +1,6 @@
 # MathsMAUI
 
-Learn basic maths with this windows and android app.
+Learn basic maths with this windows app.
 
 ## Topics Learned by Building This Project
 
