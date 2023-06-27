@@ -14,7 +14,8 @@
                 Margin="10,10,10,20"
                 HorizontalOptions="Center"
                 HorizontalTextAlignment="Center"/>
-            <Grid>
+            <Grid BackgroundColor="#29f3c3"
+                  Padding="20">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition />
@@ -30,28 +31,45 @@
                 </Grid.RowDefinitions>
 
                 <Label Grid.Column="0"
-                       Text="Math Type"/>
+                       Text="Math Type"
+                       FontAttributes="Bold"
+                       TextColor="#272727"/>
 
                 <Label Grid.Column="1"
-                       Text="Question"/>
+                       Text="Question"
+                       FontAttributes="Bold"
+                       TextColor="#272727"
+                       HorizontalTextAlignment="Center"/>
 
                 <Label Grid.Column="2"
-                       Text="Correct Answer"/>
+                       Text="Solution"
+                       FontAttributes="Bold"
+                       TextColor="#272727"
+                       HorizontalTextAlignment="Center"/>
 
                 <Label Grid.Column="3"
-                       Text="Your Answer"/>
+                       Text="Your Answer"
+                       FontAttributes="Bold"
+                       TextColor="#272727"
+                       HorizontalTextAlignment="Center"/>
 
                 <Label Grid.Column="4"
-                       Text="Status"/>
+                       Text="Status"
+                       FontAttributes="Bold"
+                       TextColor="#272727"
+                       HorizontalTextAlignment="Center"/>
 
                 <Label Grid.Column="5"
-                       Text="Date Played"/>
+                       Text="Date Played"
+                       FontAttributes="Bold"
+                       TextColor="#272727"
+                       HorizontalTextAlignment="Center"/>
             </Grid>
 
             <CollectionView x:Name="history">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Grid>
+                        <Grid Padding="10">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />
                                 <ColumnDefinition />
@@ -67,27 +85,39 @@
                             </Grid.RowDefinitions>
 
                             <Label Grid.Column="0"
-                                   Text="{Binding gameChoice}"/>
+                                   Text="{Binding gameChoice}"
+                                   VerticalTextAlignment="Center"/>
                             
                             <Label Grid.Column="1"
-                                   Text="{Binding question}"/>
+                                   Text="{Binding question}"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalTextAlignment="Center"/>
                             
                             <Label Grid.Column="2"
-                                   Text="{Binding answer}"/>
+                                   Text="{Binding answer}"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalTextAlignment="Center"/>
                             
                             <Label Grid.Column="3"
-                                   Text="{Binding userAnswer}"/>
+                                   Text="{Binding userAnswer}"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalTextAlignment="Center"/>
                             
                             <Label Grid.Column="4"
-                                   Text="{Binding wasAnswerRight}"/>
+                                   Text="{Binding wasAnswerRight}"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalTextAlignment="Center"/>
                             
                             <Label Grid.Column="5"
-                                   Text="{Binding playedAt, StringFormat='{0:d}'}"/>
+                                   Text="{Binding playedAt, StringFormat='{0:d}'}"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalTextAlignment="Center"/>
 
                             <Button Grid.Column="6"
                                     Text="Delete"
                                     BindingContext="{Binding id}"
-                                    Clicked="DeleteGameHistory"/>
+                                    Clicked="DeleteGameHistory"
+                                    HorizontalOptions="Center"/>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
